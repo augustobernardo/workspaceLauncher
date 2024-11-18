@@ -40,4 +40,13 @@ if "%ERRORLEVEL%"=="0" (
     start "" "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 )
 
+@REM Open Sap Logon - C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe
+tasklist /FI "IMAGENAME eq saplogon.exe" 2>NUL | find /I /N "saplogon.exe">NUL
+if "%ERRORLEVEL%"=="0" (
+    echo Sap Logon is already open
+) else (
+    echo Starting Sap Logon
+    start "" "C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe"
+)
+
 pause
